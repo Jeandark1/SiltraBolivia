@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "siltraSharedlibrary", "siltraSharedlibrary\siltraSharedlibrary.csproj", "{F70FB673-53FD-441A-B0E8-29F1E3C5BAB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F70FB673-53FD-441A-B0E8-29F1E3C5BAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70FB673-53FD-441A-B0E8-29F1E3C5BAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70FB673-53FD-441A-B0E8-29F1E3C5BAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70FB673-53FD-441A-B0E8-29F1E3C5BAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C80FC89-11E5-492A-A867-99DF1C25FA76}
+	EndGlobalSection
+EndGlobal

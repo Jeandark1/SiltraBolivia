@@ -10,6 +10,6 @@ namespace CargoApi.Domain.Enums
         public enum VerificationStatus 
         { Pendiente, Aprobado, Rechazado, RequiereInformación }
         public enum UserType
-        { Cliente, Chofer, Empresa }
+        { Indefinido, Cliente, Chofer, Empresa }
     }
 }

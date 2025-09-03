@@ -14,10 +14,10 @@ namespace CargoApi.Application.DTOs
         public string Name { get; set; }
 
         [Required]
-        public string FSurname { get; set; }
+        public string? FSurname { get; set; }
 
         [Required]
-        public string MSurname { get; set; }
+        public string? MSurname { get; set; }
 
         [EmailAddress]
         public string Email { get; set; }

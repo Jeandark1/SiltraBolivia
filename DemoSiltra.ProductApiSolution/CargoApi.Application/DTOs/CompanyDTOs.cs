@@ -10,7 +10,7 @@ namespace CargoApi.Application.DTOs
         [Required]
         public int UserId { get; set; }
 
-        [Required]
+        [Required] 
         public string CompanyName { get; set; }
 
         public string ComercialName { get; set; }

@@ -77,6 +77,7 @@ namespace CargoApi.Application.Services
 
             var user = _mapper.Map<DataUser>(userDto);
             user.GeneralStatus = UserStatus.Pendiente;
+            user.UserType = UserType.Indefinido;
 
             // Setear información de auditoría
             var currentUserId = _currentUserService.GetCurrentUserId();

@@ -20,12 +20,12 @@ namespace CargoApi.Application.DTOs
         public string? MSurname { get; set; }
 
         [EmailAddress]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
-        public string Address { get; set; }
+        public string? Address { get; set; }
     }
 
     public class UpdateUserRequestDto
@@ -60,22 +60,33 @@ namespace CargoApi.Application.DTOs
 
     public class CompleteRegistrationRequestDto
     {
-        [Required]
+        required
         public string UserType { get; set; } // "client", "company", "driver"
 
         // Campos comunes
         public bool TermsAccepted { get; set; }
+
         public bool PoliticsAccepted { get; set; }
 
         // Campos específicos para empresas
+        required
         public string CompanyName { get; set; }
+
+        required
         public string NitId { get; set; }
+
+        required
         public string LegalAddress { get; set; }
 
         // Campos específicos para conductores
+        required
         public string IdentityNumber { get; set; }
+        
+        required
         public string LicenseNumber { get; set; }
-        public string LicenseCategory { get; set; }
+        
+        required
+        public string LicenseCategory  { get; set; }
     }
 
     public class ClientInfoDto

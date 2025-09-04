@@ -1,0 +1,33 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=SiltraDB;Trusted_Connection=True;TrustServerCertificate=true;"
+   },
+  "DatabaseProvider": "SqlServer", 
+  "DataParams": {
+    "SeedData": true
+  },
+  "CloudinarySettings": {
+    "CloudName": "consorcionoxun",
+    "ApiKey": "519277124248582",
+    "ApiSecret": "H2wjcd1Z8aDSMcODDuBcpH6boUc"
+  },
+  "AppSettings": {
+    "StoragePath": "Uploads"
+  },
+
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning",
+      "Microsoft.EntityFrameworkCore.Database.Command": "Warning",
+      "CargoApi": "Debug"
+    }
+  },
+  "AllowedHosts": "*",
+  "JwtSettings": {
+    "Secret": "YourSuperSecretKeyHere_AtLeast32CharactersLong",
+    "Issuer": "CargoApi",
+    "Audience": "CargoApiUsers",
+    "ExpiryInMinutes": 60
+  }
+}

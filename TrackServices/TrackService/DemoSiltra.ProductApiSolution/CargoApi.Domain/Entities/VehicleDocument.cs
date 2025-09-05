@@ -1,19 +1,17 @@
 ﻿
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
 using static CargoApi.Domain.Enums.DocumentEnums;
 using static CargoApi.Domain.Enums.UserEnums;
 
 namespace CargoApi.Domain.Entities
 {
-    [Table("DriverDocuments")]
-    public class DriverDocument : BaseEntity
+    [Table("VehicleDocuments")]
+    public class VehicleDocument : BaseEntity
     {
         [Required]
-        public int DriverId { get; set; }
-
-        public DocumentTypeDriver DocumentType { get; set; }
+        public int VehicleId { get; set; }
+        public DocumentTypeVehicle DocumentType { get; set; }
 
         [Required]
         [MaxLength(200)]
@@ -28,14 +26,14 @@ namespace CargoApi.Domain.Entities
 
         [Required]
         [MaxLength(100)]
-        public string? MimeType { get; set; }
+        public string MimeType { get; set; }
 
         // Fecha de subida
         public DateTime UploadDate { get; set; } = DateTime.UtcNow;
 
         public DateTime? ExpiryDate { get; set; }
 
-        // Verificación
+        // Verificado por
         public DateTime? VerifiedAt { get; set; }
 
         public int? VerifiedById { get; set; }
@@ -46,9 +44,11 @@ namespace CargoApi.Domain.Entities
         [MaxLength(500)]
         public string? RejectionReason { get; set; }
 
+        public bool IsActive { get; set; }
+
         // Navegación
-        [ForeignKey("DriverId")]
-        public virtual Driver Driver { get; set; }
+        [ForeignKey("VehicleId")]
+        public virtual Vehicle Vehicle { get; set; }
 
         [ForeignKey("VerifiedById")]
         public virtual DataUser VerifiedBy { get; set; }

@@ -18,8 +18,10 @@ namespace CargoApi.Application.DependencyInjection
             // Servicios de aplicación  
             services.AddScoped<IUserService, UserService>();
 
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            
+           
+
             //linea
 
             /* services.AddScoped<IDriverService, DriverService>();

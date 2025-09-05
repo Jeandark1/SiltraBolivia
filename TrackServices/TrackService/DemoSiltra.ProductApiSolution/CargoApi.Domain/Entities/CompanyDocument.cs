@@ -1,19 +1,17 @@
 ﻿
-using System.ComponentModel.DataAnnotations.Schema;
+
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
 using static CargoApi.Domain.Enums.DocumentEnums;
 using static CargoApi.Domain.Enums.UserEnums;
 
 namespace CargoApi.Domain.Entities
 {
-    [Table("DriverDocuments")]
-    public class DriverDocument : BaseEntity
+    [Table("CompanyDocuments")]
+    public class CompanyDocument : BaseEntity
     {
-        [Required]
-        public int DriverId { get; set; }
-
-        public DocumentTypeDriver DocumentType { get; set; }
+        [Required] public int CompanyId { get; set; }
+        public DocumentTypeCompany DocumentType { get; set; }
 
         [Required]
         [MaxLength(200)]
@@ -21,35 +19,30 @@ namespace CargoApi.Domain.Entities
 
         [MaxLength(500)]
         public string? DocumentDescription { get; set; }
-
-        [Required]
+        
         [MaxLength(500)]
-        public string FilePath { get; set; }
-
-        [Required]
-        [MaxLength(100)]
+        public string? FilePath { get; set; }
+        
+        [MaxLength(50)] 
         public string? MimeType { get; set; }
-
-        // Fecha de subida
         public DateTime UploadDate { get; set; } = DateTime.UtcNow;
-
         public DateTime? ExpiryDate { get; set; }
-
-        // Verificación
         public DateTime? VerifiedAt { get; set; }
 
+        // usuario verificado por 
         public int? VerifiedById { get; set; }
 
         public VerificationStatus VerificationStatus { get; set; } = VerificationStatus.Pendiente;
 
-        // Razón de rechazo
+        public bool IsActive { get; set; } = true;
+
         [MaxLength(500)]
         public string? RejectionReason { get; set; }
 
         // Navegación
-        [ForeignKey("DriverId")]
-        public virtual Driver Driver { get; set; }
-
+        [ForeignKey("CompanyId")]
+        public virtual DataCompany Company { get; set; }
+        
         [ForeignKey("VerifiedById")]
         public virtual DataUser VerifiedBy { get; set; }
     }

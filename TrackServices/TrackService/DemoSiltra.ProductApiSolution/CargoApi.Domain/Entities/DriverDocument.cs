@@ -28,7 +28,7 @@ namespace CargoApi.Domain.Entities
 
         [Required]
         [MaxLength(100)]
-        public string? MimeType { get; set; }
+        public string MimeType { get; set; }
 
         // Fecha de subida
         public DateTime UploadDate { get; set; } = DateTime.UtcNow;
